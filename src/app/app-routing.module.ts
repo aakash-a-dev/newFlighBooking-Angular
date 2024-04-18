@@ -7,6 +7,7 @@ import { LayoutComponent } from './pages/admin/layout/layout.component';
 import { AirportComponent } from './pages/admin/airport/airport.component';
 import { AllFlightsComponent } from './pages/admin/all-flights/all-flights.component';
 import { LoginComponent } from './pages/admin/login/login.component';
+import { CityComponent } from './pages/admin/city/city.component';
 
 const routes: Routes = [
   {
@@ -48,7 +49,11 @@ const routes: Routes = [
         component: AllFlightsComponent,
         title: 'All Flight'
       },
-
+      {
+        path: 'city',
+        component: CityComponent,
+        title: 'Cities'
+      }
     ]
   }
 ];
