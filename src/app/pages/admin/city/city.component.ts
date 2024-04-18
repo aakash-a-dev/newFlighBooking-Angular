@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { elementAt } from 'rxjs';
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
@@ -14,14 +15,18 @@ export class CityComponent implements OnInit {
   }
 
   getAllCity() {
-    this.http.get('https://freeapi.gerasim.in/api/FlightBooking/GetAllCity').subscribe((res: any) => {
+    const apiUrl = 'https://freeapi.gerasim.in/api/FlightBooking/GetAllCity';
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const url = proxyUrl + apiUrl;
+    this.http.get(apiUrl).subscribe((res: any) => {
       this.cityList = res.data;
-      console.log(res.data)
-    },    (error) => {
-      console.error('Error fetching cities:', error);
-    }
-
-    )
+      // this.cityList.forEach(element => {
+      //   element.isEdit = false;
+      // })
+    },
+      (error) => {
+      console.error(error)
+    })
   }
 
 }
