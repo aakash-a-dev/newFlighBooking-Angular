@@ -16,7 +16,12 @@ export class CityComponent implements OnInit {
   getAllCity() {
     this.http.get('https://freeapi.gerasim.in/api/FlightBooking/GetAllCity').subscribe((res: any) => {
       this.cityList = res.data;
-    })
+      console.log(res.data)
+    },    (error) => {
+      console.error('Error fetching cities:', error);
+    }
+
+    )
   }
 
 }

@@ -35,6 +35,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -63,6 +64,7 @@
           },
           "defaultConfiguration": "production"
         },
+        
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
@@ -73,6 +75,9 @@
               "buildTarget": "client:build:development"
             }
           },
+          "options": {
+"proxyConfig": "src/proxy.conf.json"
+},
           "defaultConfiguration": "development"
         },
         "extract-i18n": {

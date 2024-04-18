@@ -1,0 +1,6 @@
+{
+"/api": {
+"target": "https://freeapi.gerasim.in/api/FlightBooking/GetAllCity",
+"secure": true
+}
+}
