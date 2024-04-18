@@ -12,6 +12,9 @@ import { LoginComponent } from './pages/admin/login/login.component';
 import { NewFlightComponent } from './pages/admin/new-flight/new-flight.component';
 import { BookFlightComponent } from './pages/website/book-flight/book-flight.component';
 import { SearchComponent } from './pages/website/search/search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MyBookingsComponent } from './pages/website/my-bookings/my-bookings.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,15 @@ import { SearchComponent } from './pages/website/search/search.component';
     LoginComponent,
     NewFlightComponent,
     BookFlightComponent,
-    SearchComponent
+    SearchComponent,
+    MyBookingsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
